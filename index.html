@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classroom HQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Chomsky&display=swap');
+      
+      /* Custom font for the Newspaper title if available, fallback to serif */
+      .font-newspaper {
+        font-family: 'Playfair Display', serif;
+      }
+      .font-body {
+        font-family: 'Inter', sans-serif;
+      }
+      /* Hide scrollbar for clean UI but allow functionality */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+          background-color: #e5e7eb;
+          border-radius: 20px;
+      }
+      
+      /* Animations */
+      @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+      }
+      @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
+
+      .animate-fade-in {
+          animation: fadeIn 0.3s ease-out forwards;
+      }
+      .animate-fade-in-up {
+          animation: fadeInUp 0.5s ease-out forwards;
+      }
+      .animate-fade-in-down {
+          animation: fadeInDown 0.3s ease-out forwards;
+      }
+
+      /* PRINT STYLES - Strict A4 */
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          margin: 0;
+          padding: 0;
+          background-color: white;
+        }
+        /* Hide everything by default when printing, we will explicitly show the print container */
+        body > *:not(#root) {
+          display: none;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "@heroicons/react/": "https://aistudiocdn.com/@heroicons/react@^2.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-gray-900 font-body antialiased">
+    <div id="root"></div>
+  </body>
+</html>
