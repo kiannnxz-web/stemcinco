@@ -1,5 +1,7 @@
 {
   "name": "Classroom HQ",
   "description": "A comprehensive classroom management tool for officers and students, featuring announcements, agenda, transparency-focused class funds tracking, and an AI-powered classic newspaper generator.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "camera"
+  ]
 }
